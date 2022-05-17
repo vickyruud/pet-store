@@ -1,16 +1,16 @@
 <div id="<%= dom_id product %>">
-  <div class="max-w-sm rounded overflow-hidden shadow-lg">
-    <img class="w-full" src="<%= product.image %>" alt="picture">
+  <div class="max-w-sm h-fit  rounded overflow-hidden shadow-2xl">
+    <img class="w-full h-96 object-contain h-64 w-64" src="<%= product.image %>" alt="picture">
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2"><%= product.name %></div>
       <p class="text-gray-700 text-base">
         <%= product.description.truncate(100) %>
       </p>
     </div>
-    <div class="px-6 pt-4 pb-2">
+    <div class="flex flex-row justify-between px-6 pt-4 pb-2">
      <% if action_name != "show" %>
-    <%= link_to "Show this product", product, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this product', edit_product_path(product), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "View", product, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold  py-2 px-4 rounded " %>
+    <%= link_to 'Edit', edit_product_path(product), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
   <% end %>
     </div>
   </div>
