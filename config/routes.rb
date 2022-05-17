@@ -2,7 +2,14 @@ Rails.application.routes.draw do
 
   # home page to show all products
   root to: 'products#index'
-  
+
+  get '/show_deleted', to: 'products#show_deleted'
+  # put '/products/undelete/:id'=> 'products#undelete', :as => 'undelete_product'
+    
   # product routes
-  resources :products 
+  resources :products  do
+    put 'undelete/:id', to: 'products#undelete', :as => 'undelete'
+  end
+
+
 end

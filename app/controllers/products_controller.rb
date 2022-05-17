@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  # DELETE /products/1
+  # DELETE /products/1 soft delete
   def destroy
     @product.update(deleted_at: Time.now)
 
@@ -57,17 +57,21 @@ class ProductsController < ApplicationController
     end
   end
 
+ 
+
   #show soft deleted products
   def show_deleted
-    @products = Product.where(deleted_at: nil);
+    @products = Product.where.not(deleted_at: nil);
     
   end
 
   #undelete product
   def undelete
-    @product.deleted_at = nil
+    puts "here"
+    @product = Product.find(params[:id])
+    @product.update(deleted_at: nil)
     respond_to do |format|
-      format.html { redirect_to products_url, notice: "Product was successfully undeleted." }
+      format.html { redirect_to products_url, notice: "Product was successfully restored." }
       format.json { head :no_content }
     end
   
