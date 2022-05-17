@@ -1,12 +1,12 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
-  # GET /products or /products.json
+  # GET /products 
   def index
     @products = Product.all
   end
 
-  # GET /products/1 or /products/1.json
+  # GET /products/1 
   def show
   end
 
@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
   def edit
   end
 
-  # POST /products or /products.json
+  # POST /products 
   def create
     @product = Product.new(product_params)
 
@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /products/1 or /products/1.json
+  # PUT /products/1 
   def update
     respond_to do |format|
       if @product.update(product_params)
@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  # DELETE /products/1 or /products/1.json
+  # DELETE /products/1
   def destroy
     @product.destroy
 
@@ -58,12 +58,12 @@ class ProductsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # find product and set it as the active one
     def set_product
       @product = Product.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # accept product params
     def product_params
       params.require(:product).permit(:name, :price, :image, :description)
     end
