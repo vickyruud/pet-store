@@ -7,7 +7,7 @@
      <% if action_name != "show" %>
         <%= product.description.truncate(100) %>
         <% else %>
-        <%= product.description %>
+        <%= product.description.truncate(350) %>
      <% end %>
       </p>
     </div>

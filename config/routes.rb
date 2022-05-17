@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # product routes
   resources :products  do
     put 'undelete/:id', to: 'products#undelete', :as => 'undelete'
+    get 'deleteComment/:id', to:'products#add_delete_comment_form', :as => 'deleteComment'
+
   end
 
 

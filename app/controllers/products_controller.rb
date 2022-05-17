@@ -49,7 +49,7 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1 soft delete
   def destroy
-    @product.update(deleted_at: Time.now)
+    @product.update(deleted_at: Time.now, delete_comment:params[:product][:delete_comment] )
 
     respond_to do |format|
       format.html { redirect_to products_url, notice: "Product was successfully deleted." }
@@ -75,6 +75,11 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   
+  end
+
+  def add_delete_comment_form
+    puts 'here', params[:delete_comment]
+    @product = Product.find(params[:id])
   end
 
   private

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_17_144241) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_17_182727) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.decimal "price", precision: 8, scale: 2
@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_144241) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
+    t.string "delete_comment"
     t.index ["deleted_at"], name: "index_products_on_deleted_at"
   end
 

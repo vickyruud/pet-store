@@ -5,13 +5,14 @@
     <% end %>
 
     <%= render @product %>
-    <%puts 'herer' , @product.deleted_at%>
      <% if @product.deleted_at.nil? %>
       <div class="inline-block ml-2">
-        <%= button_to 'Destroy this product', product_path(@product), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+        <%= link_to 'Delete Product', product_deleteComment_path(@product.id), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
       </div>
       <% else %>
       <div class="inline-block ml-2">
+      <p> Reason for Deletion: </p>
+      <p><%= @product.delete_comment %> </p>
       <%= button_to 'Restore Product', product_undelete_path(@product.id), method: :put, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
       </div>
      <% end %>
