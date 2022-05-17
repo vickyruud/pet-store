@@ -1,10 +1,14 @@
 <div id="<%= dom_id product %>">
-  <div class="max-w-sm h-fit  rounded overflow-hidden shadow-2xl">
+  <div class="max-w-sm h-fit mb-4 rounded overflow-hidden shadow-2xl">
     <img class="w-full h-96 object-contain h-64 w-64" src="<%= product.image %>" alt="picture">
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2"><%= product.name %></div>
       <p class="text-gray-700 text-base">
+     <% if action_name != "show" %>
         <%= product.description.truncate(100) %>
+        <% else %>
+        <%= product.description %>
+     <% end %>
       </p>
     </div>
     <div class="flex flex-row justify-between px-6 pt-4 pb-2">

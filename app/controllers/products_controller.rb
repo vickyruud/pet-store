@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   # GET /products 
   def index
-    @products = Product.all
+    @products = Product.where(deleted_at: nil);
   end
 
   # GET /products/1 
@@ -49,12 +49,28 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1
   def destroy
-    @product.destroy
+    @product.update(deleted_at: Time.now)
 
     respond_to do |format|
-      format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
+      format.html { redirect_to products_url, notice: "Product was successfully deleted." }
       format.json { head :no_content }
     end
+  end
+
+  #show soft deleted products
+  def show_deleted
+    @products = Product.where(deleted_at: nil);
+    
+  end
+
+  #undelete product
+  def undelete
+    @product.deleted_at = nil
+    respond_to do |format|
+      format.html { redirect_to products_url, notice: "Product was successfully undeleted." }
+      format.json { head :no_content }
+    end
+  
   end
 
   private
