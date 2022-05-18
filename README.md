@@ -22,4 +22,4 @@ This is my submission for the Shopify Backend Internship Challenge. This is a ba
 
 ### Demo
 
-[demo](https://github.com/vickyruud/pet-store/blob/main/demo/demo.gif)
+![image](https://github.com/vickyruud/pet-store/blob/main/demo/demo.gif)
