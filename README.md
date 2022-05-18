@@ -21,3 +21,5 @@ This is my submission for the Shopify Backend Internship Challenge. This is a ba
 - A unique feature added is that once a product has been deleted, You can view a list of deleted products and restore them.
 
 ### Demo
+
+[demo](https://github.com/vickyruud/pet-store/blob/main/demo/demo.gif)
