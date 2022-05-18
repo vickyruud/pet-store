@@ -10,17 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_18_221914) do
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.decimal "price", precision: 8, scale: 2
-    t.string "image"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
-    t.string "delete_comment"
-    t.index ["deleted_at"], name: "index_products_on_deleted_at"
-  end
+ActiveRecord::Schema[7.0].define(version: 2022_05_18_223708) do
+# Could not dump table "products" because of following StandardError
+#   Unknown type '' for column 'image_url'
 
 end
