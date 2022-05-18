@@ -1,24 +1,23 @@
-# README
+# Pet Shop
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my submission for the Shopify Backend Internship Challenge. This is a basic app that showcases the CRUD functionality. This was built using Ruby on Rails and Tailwind CSS.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+- Ruby version 3.0.0
+- Rails version 7.0.3
+- Tailwind CSS
 
-* System dependencies
+1. Run "bundle install" to install all dependencies.
+2. Setup the database using rails "db:setup".
+3. Run rails "db:migrate" to run the migrations
+4. Run rails "db:seed" to seed the database
+5. Use "./bin/rails tailwindcss:install" to setup Tailwind CSS.
+6. Start the server with "rails s" and have fun shopping!
 
-* Configuration
+## Features
 
-* Database creation
+- Users can view all products, create new products, edit or delete a product.
+- A unique feature added is that once a product has been deleted, You can view a list of deleted products and restore them.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Demo
