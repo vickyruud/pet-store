@@ -7,6 +7,7 @@ This is my submission for the Shopify Backend Internship Challenge. This is a ba
 - Ruby version 3.0.0
 - Rails version 7.0.3
 - Tailwind CSS
+- sqlite3 version 1.4
 
 1. Run "bundle install" to install all dependencies.
 2. Setup the database using rails "db:setup".
